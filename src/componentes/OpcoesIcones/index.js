@@ -1,16 +1,27 @@
 import perfil from '../../imagens/perfil.svg'
 import sacola from '../../imagens/sacola.svg'
+import styled from 'styled-components'
+const iconesHeader = [sacola,perfil]
 
-const iconesH = [sacola,perfil]
-
+const ConjuntoDeIcones = styled.ul`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+`
+const Icone = styled.li`
+  margin-right: 40px;
+  width: 25px;
+`
 
 function OpcoesIcones(){
     return(
-        <ul className='icones'>
-          {iconesH.map((icone)=>(
-            <li className='icone'><img src={icone}></img></li>
+        <ConjuntoDeIcones>
+          {iconesHeader.map((icone)=>(
+            <Icone>
+              <img src={icone} alt='icone'></img>
+            </Icone>
           ))}
-        </ul>
+        </ConjuntoDeIcones>
     )
 }
 
